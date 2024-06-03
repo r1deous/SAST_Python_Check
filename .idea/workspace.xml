@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="0d50e747-0e35-4e15-b048-6af5a0e47c3d" name="Changes" comment="Refactor code [bandit] [flake8]" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/master" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;r1deous&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/r1deous/SAST_Python_Check.git&quot;,
+    &quot;accountId&quot;: &quot;2ffe0232-39c8-46dd-b91a-5a712338294d&quot;
+  }
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 5
+}</component>
+  <component name="ProjectId" id="2gUfLNwBSqqhK67GnZBMLZFO7qm" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_MARK_IGNORED_FILES_AS_EXCLUDED&quot;: &quot;true&quot;,
+    &quot;Python.check_full_scope_work.executor&quot;: &quot;Run&quot;,
+    &quot;Python.deviations_not_services_GTOPS.executor&quot;: &quot;Run&quot;,
+    &quot;Python.duplicate_GTOPS.executor&quot;: &quot;Run&quot;,
+    &quot;Python.main.executor&quot;: &quot;Run&quot;,
+    &quot;Python.notification_check_GTOPS.executor&quot;: &quot;Run&quot;,
+    &quot;Python.priority_low_check.executor&quot;: &quot;Run&quot;,
+    &quot;Python.return_work_GTOPS.executor&quot;: &quot;Run&quot;,
+    &quot;Python.sla_checkout.executor&quot;: &quot;Run&quot;,
+    &quot;Python.status_pause_GTOPS.executor&quot;: &quot;Run&quot;,
+    &quot;Python.temporary_solution_GTOPS.executor&quot;: &quot;Run&quot;,
+    &quot;Python.test_check.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/r1d3o/PycharmProjects/SAST_test&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\r1d3o\PycharmProjects\SAST_test" />
+    </key>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-python-sdk-babbdf50b680-746f403e7f0c-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-241.15989.155" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="0d50e747-0e35-4e15-b048-6af5a0e47c3d" name="Changes" comment="" />
+      <created>1715757019296</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1715757019296</updated>
+    </task>
+    <task id="LOCAL-00001" summary="test_commit">
+      <option name="closed" value="true" />
+      <created>1716379191695</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1716379191695</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Refactor code [bandit] [flake8]">
+      <option name="closed" value="true" />
+      <created>1716379568995</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1716379568996</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="test_commit" />
+    <MESSAGE value="Refactor code [bandit] [flake8]" />
+    <option name="LAST_COMMIT_MESSAGE" value="Refactor code [bandit] [flake8]" />
+  </component>
+</project>
