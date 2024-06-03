@@ -1,0 +1,96 @@
+name: Analyze Code
+
+on: 
+  push:
+    branches: 
+      - master
+  pull_request:
+    branches:
+      - master
+
+jobs:
+  analyze: 
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.x'
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install bandit flake8 mypy pylint
+
+    - name: Check for Bandit label
+      id: bandit_label
+      run: |
+        echo "BANDIT_LABEL_FOUND=$(echo '${{ github.event.commits[0].message }}' | grep -qi 'bandit' && echo 'true' || echo 'false')" >> $GITHUB_ENV
+      continue-on-error: true
+
+    - name: Check for Flake8 label
+      id: flake8_label
+      run: |
+        echo "FLAKE8_LABEL_FOUND=$(echo '${{ github.event.commits[0].message }}' | grep -qi 'flake8' && echo 'true' || echo 'false')" >> $GITHUB_ENV
+      continue-on-error: true
+
+    - name: Check for Mypy label
+      id: mypy_label
+      run: |
+        echo "MYPY_LABEL_FOUND=$(echo '${{ github.event.commits[0].message }}' | grep -qi 'mypy' && echo 'true' || echo 'false')" >> $GITHUB_ENV
+      continue-on-error: true
+
+    - name: Check for Pylint label
+      id: pylint_label
+      run: |
+        echo "PYLINT_LABEL_FOUND=$(echo '${{ github.event.commits[0].message }}' | grep -qi 'pylint' && echo 'true' || echo 'false')" >> $GITHUB_ENV
+      continue-on-error: true
+
+    - name: Run Bandit
+      if: env.BANDIT_LABEL_FOUND == 'true'
+      continue-on-error: true  # Продолжить даже если bandit найдет ошибки
+      run: bandit -r . -f txt -o bandit-report.txt # Производим рекурсивный анализ и сохраняем в текстовом формате
+    - name: Upload Bandit Report as Artifact
+      if: env.BANDIT_LABEL_FOUND == 'true'
+      uses: actions/upload-artifact@v4
+      with:
+        name: bandit-report
+        path: bandit-report.txt
+      
+    - name: Run Flake8
+      if: env.FLAKE8_LABEL_FOUND == 'true'
+      continue-on-error: true  # Продолжить даже если fkale8 найдет ошибки
+      run: flake8 ./ --count --show-source --statistics > flake8_res.txt || true
+    - name: Upload Flake8 results
+      if: env.FLAKE8_LABEL_FOUND == 'true'
+      uses: actions/upload-artifact@v4
+      with:
+       name: flake8-results
+       path: flake8_res.txt
+
+    - name: Run Mypy
+      if: env.MYPY_LABEL_FOUND == 'true'
+      continue-on-error: true  # Продолжить даже если mypy найдет ошибки
+      run: mypy . | tee mypy_output.txt
+    - name: Upload Mypy Results
+      if: env.MYPY_LABEL_FOUND == 'true'
+      uses: actions/upload-artifact@v4
+      with:
+        name: mypy-results
+        path: mypy_output.txt
+        
+    - name: Run Pylint
+      if: env.PYLINT_LABEL_FOUND == 'true'
+      continue-on-error: true
+      run: |
+       git ls-files '*.py' -z | xargs -0 -I{} sh -c 'pylint {} || exit 0' > pylint-report.txt
+    - name: Upload pylint report
+      if: env.PYLINT_LABEL_FOUND == 'true'
+      uses: actions/upload-artifact@v4
+      with:
+        name: pylint-report
+        path: pylint-report.txt
